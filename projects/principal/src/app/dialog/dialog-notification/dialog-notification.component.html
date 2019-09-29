@@ -1,0 +1,12 @@
+<div class="container-flex-center">
+  <div class="container-flex-row">
+    <img class="icon" src="assets/logo.png" alt="" />
+    <div class="div-corpo">
+      <h6>{{ titulo }}</h6>
+      <div *ngIf="texto" >{{ texto }}</div>
+     </div>
+    <div class="div-imagem">
+       <button mat-mini-fab color="accent" [mat-dialog-close]="'ok'">Ok</button>
+    </div>
+  </div>
+</div>

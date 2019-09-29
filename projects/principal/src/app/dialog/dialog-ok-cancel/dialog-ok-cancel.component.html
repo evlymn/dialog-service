@@ -1,0 +1,22 @@
+<h6 matDialogTitle [ngClass]="{ h6: !this.data.inputConfig }">{{ titulo }}</h6>
+<mat-form-field class="w-100 " appearance="outline" *ngIf="data.inputConfig">
+  <input required matInput type="text" [placeholder]="placeholder" [formControl]="controle" />
+  <mat-hint class="hint"></mat-hint>
+</mat-form-field>
+<small *ngIf="texto">
+  {{ data.inputConfig ? (!controle.valid && !controle.pristine ? 'Inválido' : texto) : texto }}
+</small>
+<br />
+<button
+  class="rounded-pill ml-1"
+  [disabled]="!controle.valid"
+  mat-raised-button
+  color="accent"
+  [mat-dialog-close]="data.inputConfig ? controle.value : 'ok'"
+>
+  {{ labelOk }}
+</button>
+
+<button class="rounded-pill  m-1 " mat-raised-button color="accent" [mat-dialog-close]="'cancel'">
+  {{ labelCancel }}
+</button>

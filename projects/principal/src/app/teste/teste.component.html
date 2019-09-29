@@ -1,0 +1,35 @@
+
+<div class="container container-max">
+
+  <h3 class="text-center m-3">Teste dos dialogs</h3>
+  <div class="text-center">
+    <button mat-raised-button color="primary" class="rounded-pill m-3 btn-block" (click)="abrirDialogSimples()">
+      Abrir dialog simples
+    </button>
+    {{ dialogSimples }}
+    <button mat-raised-button color="primary" class="rounded-pill m-3 btn-block" (click)="abrirDialogOkCancel()">
+      Abrir dialog ok cancel
+    </button>
+    {{ okCancel }}
+    <button
+      mat-raised-button
+      color="primary"
+      class="rounded-pill m-3 btn-block"
+      (click)="abrirDialogOkCancelComInputText()"
+    >
+      Abrir dialog ok cancel com input text
+    </button>
+    {{ okCancelInputText }}
+    <button mat-raised-button color="primary" class="rounded-pill m-3 btn-block" (click)="abrirDialogNotification()">
+      Abrir dialog notification
+    </button>
+    {{ notification }}
+    <button mat-raised-button color="primary" class="rounded-pill m-3 btn-block" (click)="abrirInputFile()" >Abrir dialog de crop de imagem</button>
+
+    <div class=" text-center" *ngIf="imagem">
+      <img [src]="imagem" class="imagem-evento" />
+    </div>
+  </div>
+</div>
+
+<input type="file" accept="image/*" #inputFile (change)="fileChangeEvent($event)" />

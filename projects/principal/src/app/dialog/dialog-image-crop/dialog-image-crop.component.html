@@ -1,0 +1,15 @@
+<mat-dialog-content>
+  <h6 class="text-center">
+    {{imageConfig.titulo}}
+  </h6>
+  <image-cropper [imageChangedEvent]="imageConfig.event" [imageQuality]="50" [maintainAspectRatio]="true"
+    [aspectRatio]="imageConfig.aspectRatio" format="jpeg" (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()" (loadImageFailed)="loadImageFailed()">
+  </image-cropper>
+</mat-dialog-content>
+<mat-dialog-actions class="">
+  <button mat-raised-button color="accent" [mat-dialog-close]="croppedImageEvent" class="rounded-pill  mt-2">Finalizar recorte
+  </button>
+  <button mat-raised-button color="accent" [mat-dialog-close] class="rounded-pill mt-2 ">Cancelar
+  </button>
+</mat-dialog-actions>
